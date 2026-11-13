@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thomas Rupsis — Trumpet Performer & Music Educator</title>
+  <meta name="description" content="Portfolio of Thomas Rupsis: Trumpet Performer, DCI World Champion Lead Trumpet, and Music Educator in Cedar Park, TX.">
+  
+  <!-- Favicon using new Copper & Charcoal TR Trumpet Mark -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' fill='none'><rect width='36' height='36' rx='8' fill='%23FAF7F5'/><path d='M7 13H21L28 8.5V17.5L21 13Z' fill='%23B26B57'/><rect x='12' y='7' width='1.8' height='6' rx='0.6' fill='%23363A3E'/><rect x='15' y='7' width='1.8' height='6' rx='0.6' fill='%23363A3E'/><rect x='18' y='7' width='1.8' height='6' rx='0.6' fill='%23363A3E'/><circle cx='12.9' cy='5.5' r='1.1' fill='%23B26B57'/><circle cx='15.9' cy='5.5' r='1.1' fill='%23B26B57'/><circle cx='18.9' cy='5.5' r='1.1' fill='%23B26B57'/><path d='M9.5 13V15.5C9.5 16.3 10.2 17 11 17H14' stroke='%23363A3E' stroke-width='1.4' stroke-linecap='round'/><text x='18' y='30' text-anchor='middle' font-family='Georgia, serif' font-size='10' font-weight='bold' fill='%23B26B57' letter-spacing='2'>TR</text></svg>">
+
+  <!-- Typography: Newsreader & Inter for modern, editorial elegance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: {
+              DEFAULT: '#FAF7F5', // Soft warm alabaster
+              elevated: '#F3EDE8', // Warm container for contact
+              card: '#FFFFFF',
+              border: 'rgba(54, 58, 62, 0.1)',
+              borderHover: 'rgba(178, 107, 87, 0.35)',
+            },
+            copper: {
+              DEFAULT: '#B26B57', // Logo's warm copper / rose bronze
+              light: '#C88370',
+              dark: '#8F4F3D',
+              tint: '#FAF0EB',
+            },
+            charcoal: {
+              DEFAULT: '#363A3E', // Logo's graphite charcoal
+              heading: '#1E2124',
+              muted: '#61676D',
+            }
+          },
+          fontFamily: {
+            serif: ['"Newsreader"', 'Georgia', 'serif'],
+            sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css?v=7">
+</head>
+<body class="bg-surface text-charcoal font-sans antialiased min-h-screen flex flex-col selection:bg-copper/15 selection:text-copper-dark relative">
+
+  <!-- ============================================================== -->
+  <!-- STATIONARY WATERMARK BACKGROUND LOGO -->
+  <!-- Centered & fixed in the viewport; page content scrolls over it -->
+  <!-- ============================================================== -->
+  <div class="site-watermark" aria-hidden="true">
+    <img 
+      src="assets/logo.png" 
+      alt="" 
+      class="site-watermark-img"
+    />
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- TOP BANNER & NAVIGATION (COPPER & CHARCOAL PALETTE) -->
+  <!-- ============================================================== -->
+  <header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-surface-border" id="mainHeader">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Link: Logo to the LEFT of the name -->
+        <a href="#home" onclick="switchTab('home')" class="flex items-center gap-3.5 group focus:outline-none">
+          
+          <!-- User's Custom TR Trumpet Logo (Transparent, to the left of name) -->
+          <div class="h-12 w-11 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
+            <img 
+              src="assets/logo.png" 
+              alt="Thomas Rupsis TR Logo" 
+              class="h-full w-auto object-contain filter drop-shadow-sm"
+            />
+          </div>
+
+          <!-- Name & Subtitle -->
+          <div class="flex flex-col">
+            <span class="font-serif text-xl tracking-tight text-charcoal-heading group-hover:text-copper transition-colors font-medium">Thomas Rupsis</span>
+            <span class="text-[11px] tracking-widest text-charcoal-muted uppercase font-medium">Trumpet &amp; Education</span>
+          </div>
+
+        </a>
+
+        <!-- Desktop Navigation Tabs -->
+        <nav class="hidden md:flex items-center space-x-1" aria-label="Main Navigation">
+          <button 
+            type="button" 
+            onclick="switchTab('home')" 
+            id="tab-btn-home"
+            class="nav-tab-btn active px-4 py-2 rounded-lg text-sm font-semibold transition-colors text-copper bg-copper/10">
+            Home
+          </button>
+
+          <button 
+            type="button" 
+            onclick="switchTab('about')" 
+            id="tab-btn-about"
+            class="nav-tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors text-charcoal-muted hover:text-charcoal-heading hover:bg-black/[0.04]">
+            About
+          </button>
+
+          <button 
+            type="button" 
+            onclick="switchTab('lessons')" 
+            id="tab-btn-lessons"
+            class="nav-tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors text-charcoal-muted hover:text-charcoal-heading hover:bg-black/[0.04]">
+            Lessons
+          </button>
+
+          <button 
+            type="button" 
+            onclick="switchTab('media')" 
+            id="tab-btn-media"
+            class="nav-tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors text-charcoal-muted hover:text-charcoal-heading hover:bg-black/[0.04]">
+            Media
+          </button>
+
+          <button 
+            type="button" 
+            onclick="switchTab('contact')" 
+            id="tab-btn-contact"
+            class="nav-tab-btn ml-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 shadow-sm">
+            Contact
+          </button>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button 
+          type="button" 
+          onclick="toggleMobileMenu()" 
+          class="md:hidden p-2 text-charcoal-muted hover:text-charcoal-heading focus:outline-none"
+          aria-label="Toggle navigation menu">
+          <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobileMenu" class="hidden md:hidden pb-5 pt-2 border-t border-surface-border">
+        <div class="flex flex-col space-y-1">
+          <button onclick="switchTab('home'); toggleMobileMenu(false);" id="mobile-tab-btn-home" class="text-left px-3 py-2.5 rounded-lg text-sm font-semibold text-copper bg-copper/10">
+            Home
+          </button>
+          <button onclick="switchTab('about'); toggleMobileMenu(false);" id="mobile-tab-btn-about" class="text-left px-3 py-2.5 rounded-lg text-sm font-medium text-charcoal-muted hover:text-charcoal-heading hover:bg-black/[0.04]">
+            About
+          </button>
+          <button onclick="switchTab('lessons'); toggleMobileMenu(false);" id="mobile-tab-btn-lessons" class="text-left px-3 py-2.5 rounded-lg text-sm font-medium text-charcoal-muted hover:text-charcoal-heading hover:bg-black/[0.04]">
+            Lessons
+          </button>
+          <button onclick="switchTab('media'); toggleMobileMenu(false);" id="mobile-tab-btn-media" class="text-left px-3 py-2.5 rounded-lg text-sm font-medium text-charcoal-muted hover:text-charcoal-heading hover:bg-black/[0.04]">
+            Media
+          </button>
+          <button onclick="switchTab('contact'); toggleMobileMenu(false);" id="mobile-tab-btn-contact" class="text-left px-3.5 py-2.5 rounded-lg text-sm font-semibold text-copper border border-copper/40 bg-copper/5 hover:bg-copper hover:text-white">
+            Contact
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================== -->
+  <!-- MAIN TABS CONTAINER -->
+  <!-- ============================================================== -->
+  <main class="flex-grow relative z-10">
+
+    <!-- ========================================================== -->
+    <!-- TAB 1: HOME -->
+    <!-- ========================================================== -->
+    <div id="tab-content-home" class="tab-pane active">
+      
+      <!-- HERO SECTION -->
+      <section class="py-14 md:py-20">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row items-center md:items-center justify-between gap-8 md:gap-12">
+            
+            <!-- Left: Main Stuff -->
+            <div class="flex-1 space-y-6 text-left">
+              <div class="space-y-2">
+                <span class="text-xs uppercase tracking-widest text-copper font-semibold">Trumpet Performer &amp; Music Educator</span>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-charcoal-heading font-normal leading-[1.15]">
+                  Thomas Rupsis
+                </h1>
+              </div>
+
+              <p class="text-charcoal text-lg leading-relaxed font-light">
+                Trumpet player and music educator based in Cedar Park, Texas. Received a Bachelor of Music in Music Education from Texas Tech University (2026).
+              </p>
+
+              <!-- Action Links -->
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <button onclick="switchTab('lessons')" class="px-6 py-3 rounded-lg text-white bg-copper hover:bg-copper-dark font-medium text-sm transition-colors shadow-sm">
+                  Trumpet Lessons
+                </button>
+                <button onclick="switchTab('about')" class="px-6 py-3 rounded-lg text-charcoal-heading hover:text-charcoal-heading bg-white hover:bg-surface-tint border border-surface-border text-sm font-medium transition-colors shadow-sm">
+                  About Thomas
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Clean Headshot right next to the main stuff -->
+            <div class="w-56 sm:w-64 md:w-72 lg:w-80 flex-shrink-0">
+              <div class="rounded-xl overflow-hidden border border-surface-border bg-white shadow-md">
+                <img 
+                  src="assets/thomas-rupsis-headshot.jpg" 
+                  alt="Thomas Rupsis holding trumpets" 
+                  class="w-full aspect-[3/4] object-cover object-top"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- ========================================================== -->
+    <!-- TAB 2: ABOUT -->
+    <!-- ========================================================== -->
+    <div id="tab-content-about" class="tab-pane hidden">
+      
+      <section class="py-16 md:py-20 border-b border-surface-border">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+          <div class="max-w-3xl space-y-4">
+            <h1 class="font-serif text-4xl sm:text-5xl text-charcoal-heading font-normal">About Thomas</h1>
+            <p class="text-charcoal-muted text-lg leading-relaxed font-light">
+              An overview of education, performance background, and teaching experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Biography Narrative -->
+            <div class="lg:col-span-7 space-y-8 text-charcoal text-base leading-relaxed">
+              
+              <div class="space-y-3">
+                <h2 class="font-serif text-2xl text-charcoal-heading">Educational Background</h2>
+                <p>
+                  Originally from Billings, Montana, Thomas Rupsis attended Billings West High School, where he maintained a 4.42 weighted GPA and was named to the Montana All-State Band and Orchestra for four consecutive years, as well as the NAfME All-Northwest Band/Orchestra.
+                </p>
+                <p>
+                  He moved to Texas to earn his Bachelor of Music in Music Education at Texas Tech University, studying trumpet under Dr. Julia Bell and Dr. Kevin Whalen. While at TTU, he has earned places on both the President's List and Dean's List, and has served as President of the Raider Trumpet Guild and Ambassador for the Talkington College of Visual &amp; Performing Arts.
+                </p>
+              </div>
+
+              <div class="space-y-3">
+                <h2 class="font-serif text-2xl text-charcoal-heading">Performance Experience</h2>
+                <p>
+                  Thomas was a member of the 2026 FOOSA Philharmonic Orchestra Festival in Fresno, California, and has traveled to Mexico City to perform in the 2025 EuroJazz festival. He is an active participant in the National Trumpet Competition, placing 1st in the 2024 large ensemble division. He advanced to semifinals in the 2025 large ensemble division, quarterfinals in the 2023 and 2026 large ensemble divisions, and quarterfinals in the 2026 undergraduate solo division. In addition to various chamber brass and mixed ensembles, he was a member of the Hub City Brass Quintet, the premiere undergraduate brass quintet at Texas Tech University.
+                </p>
+              </div>
+
+              <div class="space-y-3">
+                <h2 class="font-serif text-2xl text-charcoal-heading">Teaching Experience</h2>
+                <p>
+                  As an educator, Thomas has taught freelance private trumpet lessons since 2019, working with brass students ranging from beginning middle schoolers to advanced high school players preparing for region and state auditions. He currently student teaches with the concert and marching band programs at Vandegrift High School and at Canyon Ridge Middle School in Leander ISD.
+                </p>
+              </div>
+
+              <div class="space-y-3">
+                <h2 class="font-serif text-2xl text-charcoal-heading">Marching Experience</h2>
+                <p>
+                  An avid advocate for the marching arts, Thomas was a lead trumpet player for the Boston Crusaders Drum and Bugle Corps in 2024 and 2025. In 2024, he earned a silver medal and the Boston &ldquo;Excellence in Brass&rdquo; award. In 2025, he earned a gold medal and received the Jim Ott High Brass award. Thomas will join the Madison Scouts for their 2027 season as a trumpet instructor and member of the brass educational staff.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Resume Breakdown Sidebar -->
+            <div class="lg:col-span-5 space-y-8">
+              
+              <!-- Education -->
+              <div class="p-6 rounded-xl bg-white/85 backdrop-blur-sm border border-surface-border shadow-sm space-y-3">
+                <h3 class="text-xs font-semibold uppercase tracking-wider text-copper">Education</h3>
+                <div>
+                  <h4 class="text-base font-medium text-charcoal-heading">Texas Tech University</h4>
+                  <p class="text-sm text-charcoal-muted">B.M. Music Education, Trumpet (Expected Dec. 2026)</p>
+                  <p class="text-xs text-charcoal-muted mt-1">3.651 GPA &bull; Studied with Dr. Julia Bell &amp; Dr. Kevin Whalen</p>
+                </div>
+                <div class="pt-2 border-t border-surface-border">
+                  <h4 class="text-base font-medium text-charcoal-heading">Billings West High School</h4>
+                  <p class="text-xs text-charcoal-muted">Billings, MT &bull; 4.42 weighted GPA &bull; Class of 2022</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- ========================================================== -->
+    <!-- TAB 3: LESSONS -->
+    <!-- ========================================================== -->
+    <div id="tab-content-lessons" class="tab-pane hidden">
+      
+      <section class="py-16 md:py-20 border-b border-surface-border">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+          <div class="max-w-3xl space-y-4">
+            <span class="text-xs uppercase tracking-widest text-copper font-semibold">Private Studio</span>
+            <h1 class="font-serif text-4xl sm:text-5xl text-charcoal-heading font-normal">Trumpet Lessons</h1>
+            <p class="text-charcoal text-base leading-relaxed">
+              In-person and virtual individualized trumpet instruction focusing on developing a solid fundamental foundation, musicality, and audition preparation. Competitive rates with flexible availability. Find the contact form below to learn more!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 space-y-16">
+          
+          <!-- Philosophy Statement -->
+          <div class="max-w-3xl space-y-3">
+            <h2 class="font-serif text-2xl text-charcoal-heading">Teaching Philosophy</h2>
+            <p class="text-charcoal text-base leading-relaxed">
+              Playing the trumpet should feel natural and musical. Lessons are individually personalized to help the player achieve their own goals, while also refining fundamentals. Whether preparing for middle school all-region auditions or competitive TMEA All-State and college entrance trials, students build sustainable technique that eliminates unnecessary tension.
+            </p>
+          </div>
+
+          <!-- Studio Offerings Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="p-6 rounded-xl bg-white/85 backdrop-blur-sm border border-surface-border shadow-sm flex flex-col justify-between hover:border-copper/40 transition-colors">
+              <div class="space-y-3">
+                <span class="text-xs font-semibold uppercase tracking-wider text-copper">Middle School</span>
+                <h3 class="font-serif text-xl text-charcoal-heading">Foundation &amp; All-Region</h3>
+                <p class="text-charcoal-muted text-sm leading-relaxed">
+                  Ideal for 6th–8th graders developing a rich sound, establishing good practice habits, reading skills, tone quality, and middle school all-region audition music.
+                </p>
+              </div>
+              <div class="pt-6">
+                <button onclick="switchTab('contact')" class="text-xs uppercase tracking-wider font-semibold text-copper hover:text-copper-dark hover:underline">
+                  Inquire for Middle School &rarr;
+                </button>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl bg-white/85 backdrop-blur-sm border border-surface-border shadow-sm flex flex-col justify-between hover:border-copper/40 transition-colors">
+              <div class="space-y-3">
+                <span class="text-xs font-semibold uppercase tracking-wider text-copper">High School</span>
+                <h3 class="font-serif text-xl text-charcoal-heading">All-State &amp; College Prep</h3>
+                <p class="text-charcoal-muted text-sm leading-relaxed">
+                  Preparation for TMEA All-State etudes, UIL Solo &amp; Ensemble contest, ensemble trumpet playing, and college auditions.
+                </p>
+              </div>
+              <div class="pt-6">
+                <button onclick="switchTab('contact')" class="text-xs uppercase tracking-wider font-semibold text-copper hover:text-copper-dark hover:underline">
+                  Inquire for High School &rarr;
+                </button>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl bg-white/85 backdrop-blur-sm border border-surface-border shadow-sm flex flex-col justify-between hover:border-copper/40 transition-colors">
+              <div class="space-y-3">
+                <span class="text-xs font-semibold uppercase tracking-wider text-copper">Clinics &amp; Tech</span>
+                <h3 class="font-serif text-xl text-charcoal-heading">Marching &amp; Masterclasses</h3>
+                <p class="text-charcoal-muted text-sm leading-relaxed">
+                  Sectionals and visual/brass clinics for high school marching programs, drum corps audition prep, and brass technique.
+                </p>
+              </div>
+              <div class="pt-6">
+                <button onclick="switchTab('contact')" class="text-xs uppercase tracking-wider font-semibold text-copper hover:text-copper-dark hover:underline">
+                  Book a Clinic &rarr;
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Studio Details -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-surface-border">
+            <div class="space-y-2">
+              <h4 class="text-base font-medium text-charcoal-heading">Location &amp; Scheduling</h4>
+              <p class="text-sm text-charcoal-muted leading-relaxed">
+                In-person lessons are held in Cedar Park, TX (convenient to Cedar Park, Leander, Round Rock, and North Austin). Lessons are also available remotely over Zoom.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h4 class="text-base font-medium text-charcoal-heading">Getting Started</h4>
+              <p class="text-sm text-charcoal-muted leading-relaxed">
+                To inquire about competitive lesson rates, scheduling availability, or trial sessions, please use the <button onclick="switchTab('contact')" class="text-copper hover:underline font-medium">contact form</button>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- ========================================================== -->
+    <!-- TAB 4: MEDIA -->
+    <!-- ========================================================== -->
+    <div id="tab-content-media" class="tab-pane hidden">
+      
+      <!-- Media Header -->
+      <section class="py-16 md:py-20 border-b border-surface-border">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+          <div class="max-w-3xl space-y-4">
+            <h1 class="font-serif text-4xl sm:text-5xl text-charcoal-heading font-normal">Media</h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- Performance Recordings Section -->
+      <section class="py-16">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+          
+          <!-- Performance Recordings Box -->
+          <div class="p-8 sm:p-12 rounded-2xl bg-white/85 backdrop-blur-sm border border-surface-border shadow-sm text-center max-w-3xl mx-auto space-y-5">
+            <div class="w-16 h-16 mx-auto rounded-full bg-copper/10 text-copper flex items-center justify-center">
+              <i data-lucide="music" class="w-8 h-8"></i>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-semibold uppercase tracking-wider text-copper">Performance Recordings</span>
+              <h2 class="font-serif text-2xl sm:text-3xl text-charcoal-heading">Recordings Coming Soon!</h2>
+              <p class="text-charcoal-muted text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+                High-fidelity audio recordings and performance videos are currently in production and will be available here soon.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- ========================================================== -->
+    <!-- TAB 5: CONTACT -->
+    <!-- ========================================================== -->
+    <div id="tab-content-contact" class="tab-pane hidden">
+      
+      <!-- Contact Header -->
+      <section class="py-16 md:py-20 border-b border-surface-border">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+          <div class="max-w-3xl space-y-4">
+            <h1 class="font-serif text-4xl sm:text-5xl text-charcoal-heading font-normal">Contact</h1>
+            <p class="text-charcoal text-base leading-relaxed">
+              Send a message below for private trumpet lessons or any other inquiries.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- ============================================================== -->
+  <!-- PERSISTENT BOTTOM CONTACT SECTION (ON EVERY PAGE VIEW) -->
+  <!-- ============================================================== -->
+  <section id="contact" class="border-t border-surface-border bg-surface-elevated/85 backdrop-blur-sm pt-16 pb-14 mt-auto relative z-10">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      
+      <!-- Centered Contact Form Container -->
+      <div class="max-w-2xl mx-auto">
+        
+        <div class="text-center space-y-2 mb-8" id="contactHeaderBlock">
+          <h2 class="font-serif text-3xl sm:text-4xl text-charcoal-heading font-normal">Get in Touch</h2>
+          <p class="text-charcoal-muted text-sm leading-relaxed">
+            Send a message below for private trumpet lessons or any other inquiries.
+          </p>
+        </div>
+
+        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="space-y-1">
+              <label for="senderName" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">Name</label>
+              <input 
+                type="text" 
+                id="senderName" 
+                name="name" 
+                required 
+                placeholder="Your name" 
+                class="w-full px-3.5 py-2.5 rounded-lg bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-sm transition-colors shadow-sm"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label for="senderEmail" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">Email</label>
+              <input 
+                type="email" 
+                id="senderEmail" 
+                name="email" 
+                required 
+                placeholder="you@example.com" 
+                class="w-full px-3.5 py-2.5 rounded-lg bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-sm transition-colors shadow-sm"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label for="senderPhone" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">Phone</label>
+              <input 
+                type="tel" 
+                id="senderPhone" 
+                name="phone" 
+                placeholder="Phone number" 
+                class="w-full px-3.5 py-2.5 rounded-lg bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-sm transition-colors shadow-sm"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label for="senderMessage" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">Message</label>
+            <textarea 
+              id="senderMessage" 
+              name="message" 
+              rows="4" 
+              required 
+              placeholder="Tell me about your goals, current grade/level, or questions..." 
+              class="w-full px-3.5 py-2.5 rounded-lg bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-sm transition-colors resize-y shadow-sm"
+            ></textarea>
+          </div>
+
+          <div>
+            <button 
+              type="submit" 
+              id="submitBtn" 
+              class="w-full sm:w-auto px-8 py-3 rounded-lg font-medium text-sm text-white bg-copper hover:bg-copper-dark transition-colors shadow-sm"
+            >
+              Send Message
+            </button>
+          </div>
+
+          <!-- Feedback Message -->
+          <div id="formSuccessAlert" class="hidden p-4 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-900 text-sm">
+            <p class="font-medium">Message received.</p>
+            <p class="text-xs text-emerald-700 mt-1">Thank you. Thomas will be in touch with you shortly at the email address provided.</p>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================== -->
+  <!-- SITE FOOTER -->
+  <!-- ============================================================== -->
+  <footer class="border-t border-surface-border bg-surface-elevated/75 backdrop-blur-sm py-8 mt-auto relative z-10">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-charcoal-muted gap-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="TR Logo" class="h-6 w-auto opacity-75">
+        <div>
+          &copy; <span id="currentYear">2026</span> Thomas Rupsis. All rights reserved.
+        </div>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="#home" onclick="switchTab('home')" class="hover:text-charcoal-heading transition-colors">Home</a>
+        <a href="#about" onclick="switchTab('about')" class="hover:text-charcoal-heading transition-colors">About</a>
+        <a href="#lessons" onclick="switchTab('lessons')" class="hover:text-charcoal-heading transition-colors">Lessons</a>
+        <a href="#media" onclick="switchTab('media')" class="hover:text-charcoal-heading transition-colors">Media</a>
+        <a href="#contact" onclick="switchTab('contact')" class="hover:text-charcoal-heading transition-colors">Contact</a>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-charcoal-heading transition-colors">
+          Back to Top &uarr;
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External App JS -->
+  <script src="js/app.js"></script>
+</body>
+</html>

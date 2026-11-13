@@ -1,0 +1,91 @@
+/* ============================================================== */
+/* THOMAS RUPSIS - MODERN LIGHT MODE (COPPER & CHARCOAL PALETTE) STYLES */
+/* Clean editorial typography, warm porcelain surfaces, copper accents */
+/* ============================================================== */
+
+/* Tab Switching */
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* Nav Tab States */
+.nav-tab-btn {
+  transition: all 0.15s ease-in-out;
+}
+
+.nav-tab-btn.active:not(#tab-btn-contact) {
+  color: #B26B57 !important;
+  background-color: rgba(178, 107, 87, 0.1) !important;
+  font-weight: 600;
+}
+
+/* Highlighted Contact Button */
+#tab-btn-contact {
+  border: 1px solid #B26B57 !important;
+  color: #B26B57;
+  font-weight: 600;
+}
+
+#tab-btn-contact:hover {
+  background-color: #B26B57 !important;
+  color: #FFFFFF !important;
+}
+
+#tab-btn-contact.active {
+  color: #FFFFFF !important;
+  background-color: #B26B57 !important;
+  border-color: #B26B57 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth Focus States */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #B26B57 !important;
+  box-shadow: 0 0 0 2px rgba(178, 107, 87, 0.25);
+}
+
+/* Stationary Background Watermark Logo */
+.site-watermark {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.site-watermark-img {
+  width: min(85vw, 680px);
+  max-height: 75vh;
+  object-fit: contain;
+  opacity: 0.065;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  filter: contrast(1.05);
+}
+
+/* Light Mode Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8CECA;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B26B57;
+}
