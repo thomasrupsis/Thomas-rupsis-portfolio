@@ -479,13 +479,46 @@
     <div id="tab-content-contact" class="tab-pane hidden">
       
       <!-- Contact Header -->
-      <section class="py-16 md:py-20 border-b border-surface-border">
+      <section class="py-12 md:py-16 border-b border-surface-border">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
-          <div class="max-w-3xl space-y-4">
+          <div class="max-w-2xl mx-auto text-center space-y-4">
             <h1 class="font-serif text-4xl sm:text-5xl text-charcoal-heading font-normal">Contact</h1>
             <p class="text-charcoal text-base leading-relaxed">
-              Send a message below for private trumpet lessons or any other inquiries.
+              Reach out using the contact form below for private lessons, masterclasses, or performance inquiries, or connect directly through email and social media.
             </p>
+
+            <!-- Direct Contact & Social Links -->
+            <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+              <a 
+                href="mailto:thomas.rupsis@gmail.com" 
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-surface-border text-sm text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+              >
+                <i data-lucide="mail" class="w-4 h-4 text-copper"></i>
+                <span>thomas.rupsis@gmail.com</span>
+              </a>
+
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                id="contactInstagramLink"
+                class="contact-ig-link inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-surface-border text-sm text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+              >
+                <i data-lucide="instagram" class="w-4 h-4 text-copper"></i>
+                <span>Instagram</span>
+              </a>
+
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                id="contactFacebookLink"
+                class="contact-fb-link inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-surface-border text-sm text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+              >
+                <i data-lucide="facebook" class="w-4 h-4 text-copper"></i>
+                <span>Facebook</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -504,11 +537,38 @@
       <!-- Centered Contact Form Container -->
       <div class="max-w-2xl mx-auto">
         
-        <div class="text-center space-y-2 mb-8" id="contactHeaderBlock">
+        <div class="text-center space-y-3 mb-8" id="contactHeaderBlock">
           <h2 class="font-serif text-3xl sm:text-4xl text-charcoal-heading font-normal">Get in Touch</h2>
-          <p class="text-charcoal-muted text-sm leading-relaxed">
-            Send a message below for private trumpet lessons or any other inquiries.
+          <p class="text-charcoal-muted text-sm leading-relaxed max-w-xl mx-auto">
+            Reach out using the contact form below for private trumpet lessons or any inquiries, or connect directly via email and social media.
           </p>
+          <div class="flex flex-wrap items-center justify-center gap-3 pt-1">
+            <a 
+              href="mailto:thomas.rupsis@gmail.com" 
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white border border-surface-border text-xs text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+            >
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-copper"></i>
+              <span>thomas.rupsis@gmail.com</span>
+            </a>
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="contact-ig-link inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white border border-surface-border text-xs text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+            >
+              <i data-lucide="instagram" class="w-3.5 h-3.5 text-copper"></i>
+              <span>Instagram</span>
+            </a>
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="contact-fb-link inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white border border-surface-border text-xs text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+            >
+              <i data-lucide="facebook" class="w-3.5 h-3.5 text-copper"></i>
+              <span>Facebook</span>
+            </a>
+          </div>
         </div>
 
         <form id="contactForm" onsubmit="handleContactSubmit(event)" action="https://formsubmit.co/thomas.rupsis@gmail.com" method="POST" class="space-y-4">
