@@ -152,21 +152,40 @@ function handleContactSubmit(event) {
 
   if (!form || !submitBtn) return;
 
+  // Enforce HTML5 validation
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  const nameVal = (document.getElementById('senderName') ? document.getElementById('senderName').value : '').trim();
+  const emailVal = (document.getElementById('senderEmail') ? document.getElementById('senderEmail').value : '').trim();
+  const phoneVal = (document.getElementById('senderPhone') ? document.getElementById('senderPhone').value : '').trim();
+  const messageVal = (document.getElementById('senderMessage') ? document.getElementById('senderMessage').value : '').trim();
+
+  // Validate required fields (Name, Email, Message are mandatory; Phone is optional)
+  if (!nameVal || !emailVal || !messageVal) {
+    if (alertBox) {
+      alertBox.className = 'p-4 rounded-lg bg-red-50 border border-red-300 text-red-900 text-sm';
+      alertBox.innerHTML = `
+        <p class="font-medium">Please fill in all required fields.</p>
+        <p class="text-xs text-red-700 mt-1">Name, Email, and Message are required. Phone number is optional.</p>
+      `;
+      alertBox.classList.remove('hidden');
+    }
+    return;
+  }
+
   const originalBtnText = submitBtn.textContent;
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending...';
-
-  const nameVal = document.getElementById('senderName') ? document.getElementById('senderName').value : '';
-  const emailVal = document.getElementById('senderEmail') ? document.getElementById('senderEmail').value : '';
-  const phoneVal = document.getElementById('senderPhone') ? document.getElementById('senderPhone').value : '';
-  const messageVal = document.getElementById('senderMessage') ? document.getElementById('senderMessage').value : '';
 
   const payload = {
     name: nameVal,
     email: emailVal,
     phone: phoneVal || 'Not provided',
     message: messageVal,
-    _subject: `New Inquiry from ${nameVal || 'Visitor'} (thomasrupsis.com)`,
+    _subject: `New Inquiry from ${nameVal} (thomasrupsis.com)`,
     _replyto: emailVal,
     _template: 'table',
     _captcha: 'false'

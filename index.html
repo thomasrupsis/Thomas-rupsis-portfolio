@@ -520,31 +520,39 @@
           
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="space-y-1">
-              <label for="senderName" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">Name</label>
+              <label for="senderName" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">
+                Name <span class="text-copper font-bold" title="Required">*</span>
+              </label>
               <input 
                 type="text" 
                 id="senderName" 
                 name="name" 
                 required 
+                aria-required="true"
                 placeholder="Your name" 
                 class="w-full px-3.5 py-2.5 rounded-lg bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-sm transition-colors shadow-sm"
               />
             </div>
 
             <div class="space-y-1">
-              <label for="senderEmail" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">Email</label>
+              <label for="senderEmail" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">
+                Email <span class="text-copper font-bold" title="Required">*</span>
+              </label>
               <input 
                 type="email" 
                 id="senderEmail" 
                 name="email" 
                 required 
+                aria-required="true"
                 placeholder="you@example.com" 
                 class="w-full px-3.5 py-2.5 rounded-lg bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-sm transition-colors shadow-sm"
               />
             </div>
 
             <div class="space-y-1">
-              <label for="senderPhone" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">Phone</label>
+              <label for="senderPhone" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">
+                Phone <span class="text-slate-400 font-normal lowercase text-[11px] tracking-normal">(optional)</span>
+              </label>
               <input 
                 type="tel" 
                 id="senderPhone" 
@@ -556,12 +564,15 @@
           </div>
 
           <div class="space-y-1">
-            <label for="senderMessage" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">Message</label>
+            <label for="senderMessage" class="block text-xs uppercase tracking-wider text-charcoal font-semibold">
+              Message <span class="text-copper font-bold" title="Required">*</span>
+            </label>
             <textarea 
               id="senderMessage" 
               name="message" 
               rows="4" 
               required 
+              aria-required="true"
               placeholder="Tell me about your goals, current grade/level, or questions..." 
               class="w-full px-3.5 py-2.5 rounded-lg bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-sm transition-colors resize-y shadow-sm"
             ></textarea>
