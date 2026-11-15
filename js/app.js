@@ -210,7 +210,7 @@ function handleContactSubmit(event) {
       alertBox.className = 'p-4 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-900 text-sm';
       alertBox.innerHTML = `
         <p class="font-medium">Message sent successfully!</p>
-        <p class="text-xs text-emerald-700 mt-1">Thank you, ${nameVal}. Your message has been forwarded to Thomas at <strong>thomas.rupsis@gmail.com</strong>. He will be in touch with you shortly.</p>
+        <p class="text-xs text-emerald-700 mt-1">Thank you, ${nameVal}. Your message has been sent to Thomas. He will be in touch with you shortly.</p>
       `;
       alertBox.classList.remove('hidden');
     }
@@ -228,7 +228,7 @@ function handleContactSubmit(event) {
       alertBox.className = 'p-4 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-900 text-sm';
       alertBox.innerHTML = `
         <p class="font-medium">Message received.</p>
-        <p class="text-xs text-emerald-700 mt-1">Thank you, ${nameVal || 'Visitor'}. Inquiries are delivered directly to <strong>thomas.rupsis@gmail.com</strong>. Thomas will get back to you shortly.</p>
+        <p class="text-xs text-emerald-700 mt-1">Thank you, ${nameVal || 'Visitor'}. Your message has been sent to Thomas. He will be in touch with you shortly.</p>
       `;
       alertBox.classList.remove('hidden');
     }
