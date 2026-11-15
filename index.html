@@ -512,7 +512,11 @@
           </p>
         </div>
 
-        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+        <form id="contactForm" onsubmit="handleContactSubmit(event)" action="https://formsubmit.co/thomas.rupsis@gmail.com" method="POST" class="space-y-4">
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="New Trumpet Studio Inquiry (thomasrupsis.com)">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
           
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="space-y-1">
