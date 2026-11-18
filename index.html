@@ -691,20 +691,6 @@
                 </button>
               </div>
 
-              <!-- Save Contact (vCard) -->
-              <button 
-                type="button" 
-                onclick="downloadVCard()" 
-                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-surface-border text-xs text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
-                title="Download contact card to phone or computer (.vcf)"
-              >
-                <svg class="w-3.5 h-3.5 text-copper flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
-                <span>Save Contact</span>
-              </button>
-
               <a 
                 href="https://www.instagram.com/thomas.rupsis/" 
                 target="_blank" 
@@ -747,15 +733,15 @@
   <!-- ============================================================== -->
   <!-- PERSISTENT BOTTOM CONTACT SECTION (ON EVERY PAGE VIEW) -->
   <!-- ============================================================== -->
-  <section id="contact" class="border-t border-surface-border bg-surface-elevated/85 backdrop-blur-sm pt-8 pb-8 sm:pt-10 sm:pb-10 mt-auto relative z-10">
+  <section id="contact" class="border-t border-surface-border bg-surface-elevated/85 backdrop-blur-sm py-5 sm:py-6 mt-auto relative z-10">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       
       <!-- Centered Compact Contact Container -->
-      <div class="max-w-xl mx-auto">
+      <div class="max-w-lg mx-auto">
         
-        <div class="text-center space-y-2 mb-5" id="contactHeaderBlock">
-          <h2 class="font-serif text-2xl sm:text-3xl text-charcoal-heading font-normal">Get in Touch</h2>
-          <p class="text-charcoal-muted text-xs sm:text-sm leading-relaxed max-w-md mx-auto">
+        <div class="text-center space-y-1 mb-3" id="contactHeaderBlock">
+          <h2 class="font-serif text-xl sm:text-2xl text-charcoal-heading font-normal">Get in Touch</h2>
+          <p class="text-charcoal-muted text-xs leading-relaxed max-w-sm mx-auto">
             Have a question about lessons, clinics, or performance? Send a note below or connect directly.
           </p>
           <div class="flex flex-wrap items-center justify-center gap-2 pt-1">
@@ -786,20 +772,6 @@
               </button>
             </div>
 
-            <!-- Save Contact (vCard) -->
-            <button 
-              type="button" 
-              onclick="downloadVCard()" 
-              class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-surface-border text-xs text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
-              title="Download contact card to phone or computer (.vcf)"
-            >
-              <svg class="w-3.5 h-3.5 text-copper flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-              <span>Save Contact</span>
-            </button>
-
             <a 
               href="https://www.instagram.com/thomas.rupsis/" 
               target="_blank" 
@@ -829,52 +801,15 @@
           </div>
         </div>
 
-        <form id="contactForm" onsubmit="handleContactSubmit(event)" action="https://formsubmit.co/thomas.rupsis@gmail.com" method="POST" class="space-y-3">
+        <form id="contactForm" onsubmit="handleContactSubmit(event)" action="https://formsubmit.co/thomas.rupsis@gmail.com" method="POST" class="space-y-2">
           <!-- FormSubmit Configuration -->
           <input type="hidden" name="_subject" id="formSubmitSubject" value="New Trumpet Lesson Inquiry (thomasrupsis.com)">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           
-          <!-- Inquiry Topic Selector Pills -->
-          <div class="space-y-1.5">
-            <label class="block text-[11px] uppercase tracking-wider text-charcoal-muted font-semibold">
-              Inquiry Topic
-            </label>
-            <input type="hidden" id="inquiryTypeInput" name="inquiry_type" value="Private Lessons">
-            <div class="flex flex-wrap gap-1.5" id="topicPillContainer">
-              <button 
-                type="button" 
-                onclick="selectInquiryTopic('Private Lessons')" 
-                data-topic="Private Lessons" 
-                class="topic-pill active px-3 py-1 rounded-md text-xs font-medium border border-copper bg-copper text-white shadow-sm transition-all">
-                Private Lessons
-              </button>
-              <button 
-                type="button" 
-                onclick="selectInquiryTopic('Masterclass / Clinic')" 
-                data-topic="Masterclass / Clinic" 
-                class="topic-pill px-3 py-1 rounded-md text-xs font-medium border border-surface-border bg-white text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all">
-                Masterclass / Clinic
-              </button>
-              <button 
-                type="button" 
-                onclick="selectInquiryTopic('Marching Arts')" 
-                data-topic="Marching Arts" 
-                class="topic-pill px-3 py-1 rounded-md text-xs font-medium border border-surface-border bg-white text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all">
-                Marching Arts
-              </button>
-              <button 
-                type="button" 
-                onclick="selectInquiryTopic('General Inquiry')" 
-                data-topic="General Inquiry" 
-                class="topic-pill px-3 py-1 rounded-md text-xs font-medium border border-surface-border bg-white text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all">
-                General Inquiry
-              </button>
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div class="space-y-1">
+          <!-- Compact 2x2 Form Fields Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div class="space-y-0.5">
               <label for="senderName" class="block text-[11px] uppercase tracking-wider text-charcoal-muted font-semibold">
                 Name <span class="text-copper font-bold" title="Required">*</span>
               </label>
@@ -885,11 +820,11 @@
                 required 
                 aria-required="true"
                 placeholder="Your name" 
-                class="w-full px-3 py-2 rounded-md bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-xs sm:text-sm transition-colors shadow-sm"
+                class="w-full px-2.5 py-1.5 rounded-md bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-xs transition-colors shadow-sm"
               />
             </div>
 
-            <div class="space-y-1">
+            <div class="space-y-0.5">
               <label for="senderEmail" class="block text-[11px] uppercase tracking-wider text-charcoal-muted font-semibold">
                 Email <span class="text-copper font-bold" title="Required">*</span>
               </label>
@@ -900,36 +835,52 @@
                 required 
                 aria-required="true"
                 placeholder="you@example.com" 
-                class="w-full px-3 py-2 rounded-md bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-xs sm:text-sm transition-colors shadow-sm"
+                class="w-full px-2.5 py-1.5 rounded-md bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-xs transition-colors shadow-sm"
               />
             </div>
 
-            <div class="space-y-1">
+            <div class="space-y-0.5">
+              <label for="inquiryTypeSelect" class="block text-[11px] uppercase tracking-wider text-charcoal-muted font-semibold">
+                Inquiry Topic
+              </label>
+              <select 
+                id="inquiryTypeSelect" 
+                name="inquiry_type" 
+                class="w-full px-2 py-1.5 rounded-md bg-white border border-surface-border text-charcoal-heading focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-xs transition-colors shadow-sm"
+              >
+                <option value="Private Lessons">Private Lessons</option>
+                <option value="Masterclass / Clinic">Masterclass / Clinic</option>
+                <option value="Marching Arts">Marching Arts</option>
+                <option value="General Inquiry">General Inquiry</option>
+              </select>
+            </div>
+
+            <div class="space-y-0.5">
               <label for="senderPhone" class="block text-[11px] uppercase tracking-wider text-charcoal-muted font-semibold">
-                Phone <span class="text-slate-400 font-normal lowercase text-[10px] tracking-normal">(opt)</span>
+                Phone <span class="text-slate-400 font-normal lowercase text-[10px] tracking-normal">(optional)</span>
               </label>
               <input 
                 type="tel" 
                 id="senderPhone" 
                 name="phone" 
                 placeholder="Phone number" 
-                class="w-full px-3 py-2 rounded-md bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-xs sm:text-sm transition-colors shadow-sm"
+                class="w-full px-2.5 py-1.5 rounded-md bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-xs transition-colors shadow-sm"
               />
             </div>
           </div>
 
-          <div class="space-y-1">
+          <div class="space-y-0.5">
             <label for="senderMessage" class="block text-[11px] uppercase tracking-wider text-charcoal-muted font-semibold">
               Message <span class="text-copper font-bold" title="Required">*</span>
             </label>
             <textarea 
               id="senderMessage" 
               name="message" 
-              rows="3" 
+              rows="2" 
               required 
               aria-required="true"
               placeholder="Tell me about your goals, current grade/level, or questions..." 
-              class="w-full px-3 py-2 rounded-md bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-xs sm:text-sm transition-colors resize-y shadow-sm"
+              class="w-full px-2.5 py-1.5 rounded-md bg-white border border-surface-border text-charcoal-heading placeholder-slate-400 focus:outline-none focus:border-copper focus:ring-1 focus:ring-copper text-xs transition-colors resize-y shadow-sm"
             ></textarea>
           </div>
 
@@ -937,14 +888,14 @@
             <button 
               type="submit" 
               id="submitBtn" 
-              class="w-full sm:w-auto px-6 py-2.5 rounded-md font-medium text-xs sm:text-sm text-white bg-copper hover:bg-copper-dark transition-colors shadow-sm"
+              class="w-full sm:w-auto px-5 py-2 rounded-md font-medium text-xs text-white bg-copper hover:bg-copper-dark transition-colors shadow-sm"
             >
               Send Message
             </button>
           </div>
 
           <!-- Feedback Message -->
-          <div id="formSuccessAlert" class="hidden p-3.5 rounded-md bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs sm:text-sm">
+          <div id="formSuccessAlert" class="hidden p-2.5 rounded-md bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs">
             <p class="font-medium">Message received.</p>
             <p class="text-xs text-emerald-700 mt-0.5">Thank you. Your message has been sent to Thomas. He will be in touch with you shortly.</p>
           </div>
@@ -1003,6 +954,6 @@
   </div>
 
   <!-- External App JS (cache-busted to ensure immediate refresh) -->
-  <script src="js/app.js?v=2.3"></script>
+  <script src="js/app.js?v=2.4"></script>
 </body>
 </html>

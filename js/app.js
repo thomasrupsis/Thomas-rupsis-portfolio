@@ -181,24 +181,13 @@ function showCopyToast() {
 }
 
 /**
- * Feature 2: Select inquiry topic pill
+ * Feature 2: Select inquiry topic dropdown
  */
 function selectInquiryTopic(topic) {
-  const input = document.getElementById('inquiryTypeInput');
-  if (input) {
-    input.value = topic;
+  const select = document.getElementById('inquiryTypeSelect');
+  if (select) {
+    select.value = topic;
   }
-
-  const pills = document.querySelectorAll('.topic-pill');
-  pills.forEach(pill => {
-    if (pill.getAttribute('data-topic') === topic) {
-      pill.classList.add('active', 'border-copper', 'bg-copper', 'text-white');
-      pill.classList.remove('border-surface-border', 'bg-white', 'text-charcoal');
-    } else {
-      pill.classList.remove('active', 'border-copper', 'bg-copper', 'text-white');
-      pill.classList.add('border-surface-border', 'bg-white', 'text-charcoal');
-    }
-  });
 }
 
 /**
@@ -333,7 +322,7 @@ function handleContactSubmit(event) {
     return;
   }
 
-  const inquiryTypeVal = (document.getElementById('inquiryTypeInput') ? document.getElementById('inquiryTypeInput').value : 'Private Lessons').trim();
+  const inquiryTypeVal = (document.getElementById('inquiryTypeSelect') ? document.getElementById('inquiryTypeSelect').value : 'Private Lessons').trim();
   const nameVal = (document.getElementById('senderName') ? document.getElementById('senderName').value : '').trim();
   const emailVal = (document.getElementById('senderEmail') ? document.getElementById('senderEmail').value : '').trim();
   const phoneVal = (document.getElementById('senderPhone') ? document.getElementById('senderPhone').value : '').trim();
