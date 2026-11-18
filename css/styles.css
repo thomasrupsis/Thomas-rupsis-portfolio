@@ -89,3 +89,88 @@ input:focus, select:focus, textarea:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: #B26B57;
 }
+
+/* ============================================================== */
+/* FEATURE STYLES: QoL & ACCESSIBILITY ENHANCEMENTS */
+/* ============================================================== */
+
+/* 1. Copy Email Toast Notification */
+#copyToast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+}
+
+#copyToast.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 2. Inquiry Topic Selector Pills */
+.topic-pill {
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.topic-pill.active {
+  background-color: #B26B57 !important;
+  color: #FFFFFF !important;
+  border-color: #B26B57 !important;
+  box-shadow: 0 1px 3px rgba(178, 107, 87, 0.25);
+}
+
+/* 4. Studio FAQ Accordion */
+.faq-item {
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.faq-item.open {
+  border-color: rgba(178, 107, 87, 0.4);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), opacity 0.25s ease-in-out;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.faq-chevron {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+  color: #B26B57;
+}
+
+/* 6. Floating Back to Top Button */
+#floatingBackToTop {
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease;
+}
+
+#floatingBackToTop.hidden-btn {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+}
+
+#floatingBackToTop.visible-btn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}

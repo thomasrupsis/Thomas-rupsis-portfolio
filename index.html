@@ -433,7 +433,7 @@
                 </p>
               </div>
               <div class="pt-6">
-                <button onclick="switchTab('contact')" class="text-xs uppercase tracking-wider font-semibold text-copper hover:text-copper-dark hover:underline">
+                <button onclick="scrollToContact('lessons-middle')" class="text-xs uppercase tracking-wider font-semibold text-copper hover:text-copper-dark hover:underline">
                   Inquire for Middle School &rarr;
                 </button>
               </div>
@@ -448,7 +448,7 @@
                 </p>
               </div>
               <div class="pt-6">
-                <button onclick="switchTab('contact')" class="text-xs uppercase tracking-wider font-semibold text-copper hover:text-copper-dark hover:underline">
+                <button onclick="scrollToContact('lessons-high')" class="text-xs uppercase tracking-wider font-semibold text-copper hover:text-copper-dark hover:underline">
                   Inquire for High School &rarr;
                 </button>
               </div>
@@ -463,7 +463,7 @@
                 </p>
               </div>
               <div class="pt-6">
-                <button onclick="switchTab('contact')" class="text-xs uppercase tracking-wider font-semibold text-copper hover:text-copper-dark hover:underline">
+                <button onclick="scrollToContact('clinic')" class="text-xs uppercase tracking-wider font-semibold text-copper hover:text-copper-dark hover:underline">
                   Book a Clinic &rarr;
                 </button>
               </div>
@@ -482,8 +482,123 @@
             <div class="space-y-2">
               <h4 class="text-base font-medium text-charcoal-heading">Getting Started</h4>
               <p class="text-sm text-charcoal-muted leading-relaxed">
-                To inquire about competitive lesson rates, scheduling availability, or trial sessions, please use the <button onclick="switchTab('contact')" class="text-copper hover:underline font-medium">contact form</button>.
+                To inquire about competitive lesson rates, scheduling availability, or trial sessions, please use the <button onclick="scrollToContact('lessons')" class="text-copper hover:underline font-medium">contact form</button>.
               </p>
+            </div>
+          </div>
+
+          <!-- Studio FAQ Accordion Section -->
+          <div class="pt-8 border-t border-surface-border space-y-6">
+            <div class="space-y-2">
+              <span class="text-xs uppercase tracking-widest text-copper font-semibold">Common Questions</span>
+              <h3 class="font-serif text-2xl sm:text-3xl text-charcoal-heading font-normal">Studio Frequently Asked Questions</h3>
+              <p class="text-charcoal-muted text-sm leading-relaxed max-w-2xl">
+                Helpful information for parents, students, and band directors regarding lesson locations, scheduling, policies, and materials.
+              </p>
+            </div>
+
+            <div class="space-y-3 pt-2" id="lessonsFaqContainer">
+              
+              <!-- FAQ Item 1 -->
+              <div class="faq-item rounded-xl bg-white/85 backdrop-blur-sm border border-surface-border overflow-hidden transition-all shadow-sm">
+                <button 
+                  type="button" 
+                  onclick="toggleFaq(this)" 
+                  class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-medium text-charcoal-heading hover:text-copper transition-colors focus:outline-none"
+                  aria-expanded="false"
+                >
+                  <span class="text-sm sm:text-base font-semibold">Where are trumpet lessons held?</span>
+                  <svg class="faq-chevron w-5 h-5 text-charcoal-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                <div class="faq-answer px-5 pb-5 pt-0 text-charcoal-muted text-sm leading-relaxed border-t border-surface-border/50">
+                  <p class="pt-3">
+                    In-person lessons are held at my private studio in Cedar Park, Texas—conveniently located for students throughout Cedar Park, Leander, Round Rock, and North Austin. In-school lessons can also be arranged at school band halls with band director approval. For students outside the Greater Austin area or students with busy travel schedules, high-fidelity online lessons are available via Zoom.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="faq-item rounded-xl bg-white/85 backdrop-blur-sm border border-surface-border overflow-hidden transition-all shadow-sm">
+                <button 
+                  type="button" 
+                  onclick="toggleFaq(this)" 
+                  class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-medium text-charcoal-heading hover:text-copper transition-colors focus:outline-none"
+                  aria-expanded="false"
+                >
+                  <span class="text-sm sm:text-base font-semibold">What ages and skill levels do you teach?</span>
+                  <svg class="faq-chevron w-5 h-5 text-charcoal-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                <div class="faq-answer px-5 pb-5 pt-0 text-charcoal-muted text-sm leading-relaxed border-t border-surface-border/50">
+                  <p class="pt-3">
+                    I work with trumpet players of all ages and abilities. This includes 6th-grade beginners building healthy embouchure mechanics and sound production, 7th–8th graders preparing for Middle School All-Region auditions, high schoolers striving for TMEA All-State honors and UIL Solo &amp; Ensemble contests, and prospective music majors preparing for university trumpet studio auditions.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item rounded-xl bg-white/85 backdrop-blur-sm border border-surface-border overflow-hidden transition-all shadow-sm">
+                <button 
+                  type="button" 
+                  onclick="toggleFaq(this)" 
+                  class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-medium text-charcoal-heading hover:text-copper transition-colors focus:outline-none"
+                  aria-expanded="false"
+                >
+                  <span class="text-sm sm:text-base font-semibold">What is your lesson cancellation &amp; rescheduling policy?</span>
+                  <svg class="faq-chevron w-5 h-5 text-charcoal-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                <div class="faq-answer px-5 pb-5 pt-0 text-charcoal-muted text-sm leading-relaxed border-t border-surface-border/50">
+                  <p class="pt-3">
+                    I ask for at least 24 hours advance notice for cancellations or rescheduling requests so that we can coordinate a makeup lesson. In situations involving unexpected student illness or mandatory school band schedule changes, I will always work flexibly with families to offer a prompt makeup time.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="faq-item rounded-xl bg-white/85 backdrop-blur-sm border border-surface-border overflow-hidden transition-all shadow-sm">
+                <button 
+                  type="button" 
+                  onclick="toggleFaq(this)" 
+                  class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-medium text-charcoal-heading hover:text-copper transition-colors focus:outline-none"
+                  aria-expanded="false"
+                >
+                  <span class="text-sm sm:text-base font-semibold">What materials and equipment should students bring?</span>
+                  <svg class="faq-chevron w-5 h-5 text-charcoal-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                <div class="faq-answer px-5 pb-5 pt-0 text-charcoal-muted text-sm leading-relaxed border-t border-surface-border/50">
+                  <p class="pt-3">
+                    Students should bring their trumpet (in good playing condition), mouthpiece, valve oil/slide grease, a pencil, and their current band or audition music. Depending on the student's level, we will integrate standard fundamental literature (such as Arban's Complete Conservatory Method, Clarke Technical Studies, or Getchell Practical Studies), which will be discussed during initial lessons.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="faq-item rounded-xl bg-white/85 backdrop-blur-sm border border-surface-border overflow-hidden transition-all shadow-sm">
+                <button 
+                  type="button" 
+                  onclick="toggleFaq(this)" 
+                  class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-medium text-charcoal-heading hover:text-copper transition-colors focus:outline-none"
+                  aria-expanded="false"
+                >
+                  <span class="text-sm sm:text-base font-semibold">Do you offer trial lessons or consultation calls?</span>
+                  <svg class="faq-chevron w-5 h-5 text-charcoal-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                <div class="faq-answer px-5 pb-5 pt-0 text-charcoal-muted text-sm leading-relaxed border-t border-surface-border/50">
+                  <p class="pt-3">
+                    Yes! I welcome prospective families and students to reach out for a brief introductory phone or video call. We can discuss your student's musical aspirations, review scheduling availability and rates, and determine the best lesson format for their growth.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -547,16 +662,46 @@
 
             <!-- Direct Contact & Social Links -->
             <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-              <a 
-                href="mailto:thomas.rupsis@gmail.com" 
-                class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-white border border-surface-border text-sm text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+              <!-- Click to Copy Email Pill -->
+              <div class="inline-flex items-center rounded-lg bg-white border border-surface-border text-sm text-charcoal shadow-sm overflow-hidden hover:border-copper/40 transition-all">
+                <a 
+                  href="mailto:thomas.rupsis@gmail.com" 
+                  class="inline-flex items-center gap-2 px-3.5 py-2 hover:text-copper transition-colors"
+                  title="Open mail client"
+                >
+                  <svg class="w-4 h-4 text-copper flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                  <span>thomas.rupsis@gmail.com</span>
+                </a>
+                <button 
+                  type="button" 
+                  onclick="copyEmailToClipboard(event)" 
+                  class="px-2.5 py-2 text-charcoal-muted hover:text-copper hover:bg-copper/5 border-l border-surface-border transition-colors flex items-center justify-center" 
+                  title="Copy email to clipboard" 
+                  aria-label="Copy email address"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                    <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Save Contact (vCard) -->
+              <button 
+                type="button" 
+                onclick="downloadVCard()" 
+                class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white border border-surface-border text-sm text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+                title="Download contact card to phone or computer (.vcf)"
               >
                 <svg class="w-4 h-4 text-copper flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <rect width="20" height="16" x="2" y="4" rx="2"/>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
                 </svg>
-                <span>thomas.rupsis@gmail.com</span>
-              </a>
+                <span>Save Contact</span>
+              </button>
 
               <a 
                 href="https://www.instagram.com/thomas.rupsis/" 
@@ -564,7 +709,7 @@
                 rel="noopener noreferrer" 
                 id="contactInstagramLink"
                 title="Instagram (@thomas.rupsis)"
-                class="contact-ig-link inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-white border border-surface-border text-sm text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+                class="contact-ig-link inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white border border-surface-border text-sm text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
               >
                 <svg class="w-4 h-4 text-copper flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
@@ -580,7 +725,7 @@
                 rel="noopener noreferrer" 
                 id="contactFacebookLink"
                 title="Facebook (trupsis)"
-                class="contact-fb-link inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-white border border-surface-border text-sm text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+                class="contact-fb-link inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white border border-surface-border text-sm text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
               >
                 <svg class="w-4 h-4 text-copper flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
@@ -612,16 +757,47 @@
             Reach out using the contact form below for private trumpet lessons or any inquiries, or connect directly via email and social media.
           </p>
           <div class="flex flex-wrap items-center justify-center gap-3 pt-1">
-            <a 
-              href="mailto:thomas.rupsis@gmail.com" 
-              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white border border-surface-border text-xs text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+            <!-- Click to Copy Email Pill -->
+            <div class="inline-flex items-center rounded-lg bg-white border border-surface-border text-xs text-charcoal shadow-sm overflow-hidden hover:border-copper/40 transition-all">
+              <a 
+                href="mailto:thomas.rupsis@gmail.com" 
+                class="inline-flex items-center gap-2 px-3 py-1.5 hover:text-copper transition-colors"
+                title="Open mail client"
+              >
+                <svg class="w-3.5 h-3.5 text-copper flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                <span>thomas.rupsis@gmail.com</span>
+              </a>
+              <button 
+                type="button" 
+                onclick="copyEmailToClipboard(event)" 
+                class="px-2 py-1.5 text-charcoal-muted hover:text-copper hover:bg-copper/5 border-l border-surface-border transition-colors flex items-center justify-center" 
+                title="Copy email to clipboard" 
+                aria-label="Copy email address"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Save Contact (vCard) -->
+            <button 
+              type="button" 
+              onclick="downloadVCard()" 
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-surface-border text-xs text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all"
+              title="Download contact card to phone or computer (.vcf)"
             >
               <svg class="w-3.5 h-3.5 text-copper flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <rect width="20" height="16" x="2" y="4" rx="2"/>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
               </svg>
-              <span>thomas.rupsis@gmail.com</span>
-            </a>
+              <span>Save Contact</span>
+            </button>
+
             <a 
               href="https://www.instagram.com/thomas.rupsis/" 
               target="_blank" 
@@ -653,9 +829,47 @@
 
         <form id="contactForm" onsubmit="handleContactSubmit(event)" action="https://formsubmit.co/thomas.rupsis@gmail.com" method="POST" class="space-y-4">
           <!-- FormSubmit Configuration -->
-          <input type="hidden" name="_subject" value="New Trumpet Studio Inquiry (thomasrupsis.com)">
+          <input type="hidden" name="_subject" id="formSubmitSubject" value="New Trumpet Studio Inquiry (thomasrupsis.com)">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
+          
+          <!-- Inquiry Topic Selector Pills -->
+          <div class="space-y-2 pb-1">
+            <label class="block text-xs uppercase tracking-wider text-charcoal font-semibold">
+              Inquiry Topic
+            </label>
+            <input type="hidden" id="inquiryTypeInput" name="inquiry_type" value="Private Lessons">
+            <div class="flex flex-wrap gap-2" id="topicPillContainer">
+              <button 
+                type="button" 
+                onclick="selectInquiryTopic('Private Lessons')" 
+                data-topic="Private Lessons" 
+                class="topic-pill active px-3.5 py-1.5 rounded-lg text-xs font-medium border border-copper bg-copper text-white shadow-sm transition-all">
+                Private Lessons
+              </button>
+              <button 
+                type="button" 
+                onclick="selectInquiryTopic('Masterclass / Clinic')" 
+                data-topic="Masterclass / Clinic" 
+                class="topic-pill px-3.5 py-1.5 rounded-lg text-xs font-medium border border-surface-border bg-white text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all">
+                Masterclass / Clinic
+              </button>
+              <button 
+                type="button" 
+                onclick="selectInquiryTopic('Marching Arts')" 
+                data-topic="Marching Arts" 
+                class="topic-pill px-3.5 py-1.5 rounded-lg text-xs font-medium border border-surface-border bg-white text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all">
+                Marching Arts
+              </button>
+              <button 
+                type="button" 
+                onclick="selectInquiryTopic('General Inquiry')" 
+                data-topic="General Inquiry" 
+                class="topic-pill px-3.5 py-1.5 rounded-lg text-xs font-medium border border-surface-border bg-white text-charcoal hover:text-copper hover:border-copper/40 shadow-sm transition-all">
+                General Inquiry
+              </button>
+            </div>
+          </div>
           
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="space-y-1">
@@ -764,7 +978,29 @@
     </div>
   </footer>
 
+  <!-- Floating Back to Top Button -->
+  <button 
+    type="button" 
+    id="floatingBackToTop" 
+    onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+    class="hidden-btn fixed bottom-6 right-6 z-40 p-3 rounded-full bg-white/95 backdrop-blur-md border border-surface-border shadow-lg text-charcoal-heading hover:text-copper hover:border-copper/40 focus:outline-none focus:ring-2 focus:ring-copper/50 transition-all duration-300"
+    aria-label="Scroll back to top" 
+    title="Back to Top"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- Copy Toast Notification -->
+  <div id="copyToast" role="status" aria-live="polite" class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-charcoal-heading text-white text-xs font-medium shadow-2xl border border-white/10">
+    <svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+    <span>Copied <strong class="text-white font-semibold">thomas.rupsis@gmail.com</strong> to clipboard!</span>
+  </div>
+
   <!-- External App JS (cache-busted to ensure immediate refresh) -->
-  <script src="js/app.js?v=2.1"></script>
+  <script src="js/app.js?v=2.2"></script>
 </body>
 </html>
