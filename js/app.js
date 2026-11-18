@@ -260,7 +260,7 @@ function downloadVCard() {
     'VERSION:3.0',
     'N:Rupsis;Thomas;;;',
     'FN:Thomas Rupsis',
-    'ORG:Thomas Rupsis Trumpet Studio',
+    'ORG:Thomas Rupsis Trumpet Instruction',
     'TITLE:Trumpet Performer & Music Educator',
     'EMAIL;type=INTERNET,pref:thomas.rupsis@gmail.com',
     'URL:https://thomasrupsis.github.io/Thomas-rupsis-portfolio/',
