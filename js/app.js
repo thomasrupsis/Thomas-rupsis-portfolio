@@ -252,7 +252,7 @@ function downloadVCard() {
     'ORG:Thomas Rupsis Trumpet Instruction',
     'TITLE:Trumpet Performer & Music Educator',
     'EMAIL;type=INTERNET,pref:thomas.rupsis@gmail.com',
-    'URL:https://thomasrupsis.github.io/Thomas-rupsis-portfolio/',
+    'URL:https://thomasrupsis.github.io/',
     'NOTE:Trumpet Performer & Music Educator based in Cedar Park, TX. Texas Tech University (B.M. 2026), Boston Crusaders Lead Trumpet, Madison Scouts Brass Staff.',
     'X-SOCIALPROFILE;type=instagram:https://www.instagram.com/thomas.rupsis/',
     'X-SOCIALPROFILE;type=facebook:https://www.facebook.com/trupsis/',

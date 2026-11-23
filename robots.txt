@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thomasrupsis.github.io/Thomas-rupsis-portfolio/sitemap.xml
+Sitemap: https://thomasrupsis.github.io/sitemap.xml
